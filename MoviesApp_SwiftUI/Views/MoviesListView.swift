@@ -13,7 +13,10 @@ struct MoviesListView: View {
         NavigationView{
             VStack {
                 List(movies) { movie in
-                    MovieRowView(movie: movie)
+                    NavigationLink(destination: MovieDetailView(movie: movie)) {
+                        MovieRowView(movie: movie)
+                    }
+
                 }
                 .listStyle(PlainListStyle())
             }
